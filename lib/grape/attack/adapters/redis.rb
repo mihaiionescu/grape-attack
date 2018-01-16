@@ -42,9 +42,7 @@ module Grape
         end
 
         def env
-          if defined?(::Rails)
-            ::Rails.env
-          elsif defined?(RACK_ENV)
+          if defined?(RACK_ENV)
             RACK_ENV
           else
             ENV['RACK_ENV']
